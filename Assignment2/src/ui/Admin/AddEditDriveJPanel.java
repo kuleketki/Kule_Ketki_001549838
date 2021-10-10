@@ -40,7 +40,7 @@ public class AddEditDriveJPanel extends javax.swing.JPanel {
         this.addEdit = addEdit;
         if (addEdit == 1) {
             this.selectedCarSerialNumber = selectedRow;
-            btnAdd.setLabel("Update");
+            btnAdd.setText("Update");
             loadDetails();
         }
     }
@@ -280,6 +280,8 @@ public class AddEditDriveJPanel extends javax.swing.JPanel {
         try {
             if (txtSerialNumber.getText().length() > 0 && txtCity.getText().length() > 0 && txtModelNumber.getText().length() > 0 && txtManufacturer.getText().length() > 0
                     && txtSeats.getText().length() > 0) {
+                boolean isSuccessful = false;
+               
                 String serialNumber = txtSerialNumber.getText();
                 String city = txtCity.getText();
                 String modelNumber = txtModelNumber.getText();
@@ -302,8 +304,9 @@ public class AddEditDriveJPanel extends javax.swing.JPanel {
                     if (!isDuplicateEntry) {
                         uber.getCarDirectory().addCar(car);
                         uber.getDriverDirectory().addDriver(driver);
+                        isSuccessful = true;
                     } else {
-                        JOptionPane.showMessageDialog(null, "Car Serial Number " + serialNumber + " already exists ", "Duplicate Entry", JOptionPane.WARNING_MESSAGE);
+                        JOptionPane.showMessageDialog(null, "Car Serial Number " + serialNumber + " already exists ", "Successful", JOptionPane.PLAIN_MESSAGE);
                     }
 
                 } else {
@@ -314,6 +317,14 @@ public class AddEditDriveJPanel extends javax.swing.JPanel {
                             d.setSerialNumber(serialNumber);
                         }
                     }
+                    isSuccessful = true;
+                }
+                if (isSuccessful) {
+                    String status = "updated";
+                    if(addEdit == 0) {
+                        status = "added";
+                    }
+                    JOptionPane.showMessageDialog(null, "Car details successfully " + status , "Duplicate Entry", JOptionPane.PLAIN_MESSAGE);
                 }
             } else {
                 JOptionPane.showMessageDialog(null, "Please All Fields ", "Empty Fields", JOptionPane.WARNING_MESSAGE);

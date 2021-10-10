@@ -30,7 +30,7 @@ public class MainJFrame extends javax.swing.JFrame {
         uber = new Uber();
         UtilityClass uc = new UtilityClass(uber);
         JLabel picLabel = new JLabel(new ImageIcon(getClass().getResource("/res/uber_logo.jpg")));
-        displayPanel.add(picLabel);
+       // displayPanel.add(picLabel);
     }
 
     /**
