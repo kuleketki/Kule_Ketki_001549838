@@ -329,6 +329,7 @@ public class SearchWorkAreaJPanel extends javax.swing.JPanel {
                 lblManufacturers.setVisible(false);
                 listManufacturers.setVisible(false);
                 lblSearchFactor.setText("Cars manufacturing year");
+                txtSearchFactor.setText("");
                 lblMaxSeats.setVisible(false);
                 txtMaxSeats.setVisible(false);
                 break;
@@ -342,7 +343,7 @@ public class SearchWorkAreaJPanel extends javax.swing.JPanel {
                 lblMaxSeats.setVisible(true);
                 txtMaxSeats.setVisible(true);
                 lblSearchFactor.setText("Minimum Seats");
-
+                txtSearchFactor.setText("");
                 break;
             case 5: //Find a car with the given serial number
                 btnSearchCars.setVisible(true);
@@ -354,6 +355,8 @@ public class SearchWorkAreaJPanel extends javax.swing.JPanel {
                 lblMaxSeats.setVisible(false);
                 txtMaxSeats.setVisible(false);
                 lblSearchFactor.setText("Enter Serial Number");
+                txtSearchFactor.setText("");
+
                 break;
             case 6: //List all cars given the model number 
                 btnSearchCars.setVisible(true);
@@ -365,6 +368,8 @@ public class SearchWorkAreaJPanel extends javax.swing.JPanel {
                 lblMaxSeats.setVisible(false);
                 txtMaxSeats.setVisible(false);
                 lblSearchFactor.setText("Enter Model Number");
+                txtSearchFactor.setText("");
+
                 break;
             case 7://List all the car manufacturers used by the (this) Uber 
                 btnSearchCars.setVisible(true);
@@ -396,6 +401,8 @@ public class SearchWorkAreaJPanel extends javax.swing.JPanel {
                 lblMaxSeats.setVisible(false);
                 txtMaxSeats.setVisible(false);
                 lblSearchFactor.setText("Enter City Name");
+                txtSearchFactor.setText("");
+
                 break;
             case 10://List all cars that have expired maintenance certificate 
                 btnSearchCars.setVisible(true);
