@@ -5,10 +5,26 @@
  */
 package Business.Customer;
 
+import java.util.ArrayList;
+
 /**
  *
  * @author harold
  */
 public class CustomerDirectory {
-    
+
+    ArrayList<Customer> customerList;
+
+    public CustomerDirectory() {
+        customerList = new ArrayList<>();
+    }
+
+    public ArrayList<Customer> getCustomerList() {
+        return customerList;
+    }
+
+    public void setCustomerList(ArrayList<Customer> customerList) {
+        this.customerList = customerList;
+    }
+
 }
