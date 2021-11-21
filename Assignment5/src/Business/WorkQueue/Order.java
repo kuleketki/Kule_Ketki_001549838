@@ -22,12 +22,15 @@ public class Order extends WorkRequest {
         count++;
     }
 
-    public static int getId() {
+    public int getId() {
         return id;
     }
 
-    public static void setId(int id) {
-        Order.id = id;
+    @Override
+    public String toString() {
+        return super.toString(); //To change body of generated methods, choose Tools | Templates.
     }
+    
+    
 
 }

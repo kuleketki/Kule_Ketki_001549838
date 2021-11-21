@@ -5,17 +5,73 @@
  */
 package userinterface.RestaurantAdminRole;
 
+import Business.EcoSystem;
+import Business.Restaurant.Menu;
+import Business.Restaurant.MenuItem;
+import Business.Restaurant.Restaurant;
+import Business.UserAccount.UserAccount;
+import Business.WorkQueue.Order;
+import Business.WorkQueue.WorkRequest;
+import java.awt.CardLayout;
+import java.text.SimpleDateFormat;
+import java.util.ArrayList;
+import java.util.Arrays;
+import javax.swing.JOptionPane;
+import javax.swing.JPanel;
+import javax.swing.table.DefaultTableModel;
+import userinterface.SystemAdminWorkArea.OrderDetailsJPanel;
+
 /**
  *
  * @author Ketki Kule <kule.k@northeastern.edu>
  */
 public class ManageOrderJPanel extends javax.swing.JPanel {
 
+    private JPanel displayPanel;
+    private UserAccount adminAccount;
+    private EcoSystem ecoSystem;
+    private Restaurant restaurant;
+
     /**
      * Creates new form ManageOrderJPanel
      */
-    public ManageOrderJPanel() {
+    public ManageOrderJPanel(JPanel userProcessContainer, UserAccount account, EcoSystem business, Restaurant restaurant) {
         initComponents();
+        this.displayPanel = userProcessContainer;
+        this.ecoSystem = business;
+        this.adminAccount = account;
+        this.restaurant = restaurant;
+        loadData();
+    }
+
+    public void loadData() {
+        SimpleDateFormat formatter = new SimpleDateFormat("dd-MM-yyyy hh:mm");
+
+        DefaultTableModel model = (DefaultTableModel) tblOrderHistory.getModel();
+        model.setRowCount(0);
+        ArrayList<String> orderItems = new ArrayList<>();
+        for (WorkRequest wr : adminAccount.getWorkQueue().getWorkRequestList()) {
+            Order order = (Order) wr;
+            orderItems = new ArrayList<>();
+            for (MenuItem menuItem : wr.getMenuItems()) {
+                orderItems.add(menuItem.getItemName());
+            }
+            Object[] row = new Object[7];
+            row[0] = wr;
+            row[1] = formatter.format(wr.getRequestDate());
+            row[2] = wr.getCustomer().getFullName();
+           
+
+            if (wr.getDeliveryMan() != null) {
+                row[3] = wr.getDeliveryMan().getName();
+            } else {
+                row[3] = "Not Assigned";
+            }
+            row[4] = wr.getStatus();
+            row[5] = wr.getDeliveryManFeedback();
+
+            model.addRow(row);
+        }
     }
 
     /**
@@ -27,19 +83,112 @@ public class ManageOrderJPanel extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jScrollPane1 = new javax.swing.JScrollPane();
+        tblOrderHistory = new javax.swing.JTable();
+        lblTitle = new javax.swing.JLabel();
+        btnBack = new javax.swing.JButton();
+        btnOrderDetails = new javax.swing.JButton();
+
+        tblOrderHistory.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null}
+            },
+            new String [] {
+                "Message", "Date", "Customer Name", "Delivery Man Name", "Order Status", "Delivery Man Feedback"
+            }
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, false, false, false, false, true
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        jScrollPane1.setViewportView(tblOrderHistory);
+
+        lblTitle.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        lblTitle.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblTitle.setText("Manage Order ");
+
+        btnBack.setText("<< Back");
+        btnBack.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnBackActionPerformed(evt);
+            }
+        });
+
+        btnOrderDetails.setText("Order Details");
+        btnOrderDetails.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnOrderDetailsActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1081, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(246, 246, 246)
+                        .addComponent(btnBack, javax.swing.GroupLayout.PREFERRED_SIZE, 119, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(23, 23, 23)
+                        .addComponent(lblTitle, javax.swing.GroupLayout.PREFERRED_SIZE, 607, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(634, 634, 634)
+                        .addComponent(btnOrderDetails, javax.swing.GroupLayout.PREFERRED_SIZE, 142, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(132, 132, 132)
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 1117, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(262, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 746, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(54, 54, 54)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lblTitle, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnBack, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(25, 25, 25)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 136, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(42, 42, 42)
+                .addComponent(btnOrderDetails, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(391, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
+    private void btnBackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBackActionPerformed
+        // TODO add your handling code here:
+        displayPanel.remove(this);
+        CardLayout layout = (CardLayout) displayPanel.getLayout();
+        layout.previous(displayPanel);
+    }//GEN-LAST:event_btnBackActionPerformed
+
+    private void btnOrderDetailsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnOrderDetailsActionPerformed
+        // TODO add your handling code here:
+        int selectedRow = tblOrderHistory.getSelectedRow();
+        if (selectedRow < 0) {
+            JOptionPane.showMessageDialog(null, "Please Select a row from table first");
+            return;
+        }
+        Order orderRequest = (Order) tblOrderHistory.getValueAt(selectedRow, 0);
+        OrderDetailsJPanel workArea = new OrderDetailsJPanel(displayPanel, ecoSystem, restaurant, orderRequest, adminAccount);
+        displayPanel.add("OrderDetailsJPanel", workArea);
+        CardLayout layout = (CardLayout) displayPanel.getLayout();
+        layout.next(displayPanel);
+    }//GEN-LAST:event_btnOrderDetailsActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnBack;
+    private javax.swing.JButton btnOrderDetails;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JLabel lblTitle;
+    private javax.swing.JTable tblOrderHistory;
     // End of variables declaration//GEN-END:variables
 }

@@ -46,7 +46,7 @@ public class CustomerJPanel extends javax.swing.JPanel {
         for (Customer customer : ecoSystem.getCustomerDirectory().getCustomerList()) {
             String userName = "";
             for (UserAccount useraccount : ecoSystem.getUserAccountDirectory().getUserAccountList()) {
-                if (useraccount.getEmployee().getName().equals(customer.getFullName())) {
+                if (useraccount.getEmployee().getId() == customer.getAccountId()) {
                     userName = useraccount.getUsername();
                 }
             }
@@ -269,7 +269,7 @@ public class CustomerJPanel extends javax.swing.JPanel {
             return;
         }
         Customer customer = (Customer) tblCustomer.getValueAt(selectedRow, 0);
-        AddEditCustomerJPanel workArea = new AddEditCustomerJPanel(displayPanel, ecoSystem, customer,1);
+        AddEditCustomerJPanel workArea = new AddEditCustomerJPanel(displayPanel, ecoSystem, customer, 1);
         displayPanel.add("AddEditCustomerJPanel", workArea);
         CardLayout layout = (CardLayout) displayPanel.getLayout();
         layout.next(displayPanel);

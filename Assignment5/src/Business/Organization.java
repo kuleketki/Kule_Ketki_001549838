@@ -22,7 +22,7 @@ public abstract class Organization {
     private UserAccountDirectory userAccountDirectory;
     private int organizationID;
     private static int counter=0;
-    
+     
     public enum Type{
         RestaurantAdmin("RestaurantAdmin"),
         Customer("Customer"),

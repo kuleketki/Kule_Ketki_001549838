@@ -18,6 +18,11 @@ public class Employee {
         id = count;
         count++;
     }
+    
+    public Employee(int id){
+        this.id = id+1;
+       
+    }
 
     public int getId() {
         return id;

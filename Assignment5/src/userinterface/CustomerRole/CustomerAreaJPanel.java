@@ -64,7 +64,11 @@ public class CustomerAreaJPanel extends javax.swing.JPanel {
             row[2] = Arrays.toString(orderItems.toArray());
             row[3] = wr.getRestuarant().getRestaurantName();
             row[4] = wr.getStatus();
+            if(wr.getDeliveryMan()!=null){
             row[5] = wr.getDeliveryMan().getName();
+            }else{
+            row[5] = "Not Assigned";    
+            }
             row[6] = wr.getDeliveryManFeedback();
             row[7] = wr.getRestaurantFeedback();
         

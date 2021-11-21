@@ -280,17 +280,12 @@ public class AddOrderJPanel extends javax.swing.JPanel {
             order.setCustomerFeedback("");
             order.setMenuItems(menuItems);
             order.setReceiver(receiverAccount);
-            order.setStatus("Order Pending");
+            order.setStatus("Order Placed");
 
+            ecoSystem.getWorkQueue().getWorkRequestList().add(order);
+            userAccount.getWorkQueue().getWorkRequestList().add(order);
+            receiverAccount.getWorkQueue().getWorkRequestList().add(order);
             JOptionPane.showMessageDialog(null, "Order Placed Successfully", "Successful", JOptionPane.INFORMATION_MESSAGE);
-
-            displayPanel.remove(this);
-            Component[] componentArray = displayPanel.getComponents();
-            Component component = componentArray[componentArray.length - 1];
-            CustomerAreaJPanel workArea = (CustomerAreaJPanel) component;
-            workArea.populateRequestTable();
-            CardLayout layout = (CardLayout) displayPanel.getLayout();
-            layout.previous(displayPanel);
 
         } else {
             JOptionPane.showMessageDialog(null, "Nothing In Cart", "Warning", JOptionPane.WARNING_MESSAGE);
@@ -355,7 +350,7 @@ public class AddOrderJPanel extends javax.swing.JPanel {
         boolean isNewItem = true;
         int selectedRow = tblMenu.getSelectedRow();
         MenuItem selectedMenuItem = (MenuItem) tblMenu.getValueAt(selectedRow, 0);
-
+        
         if (selectedRow >= 0) {
             for (MenuItem menuItem : menuItems) {
                 quantity = menuItem.getQuantity();
@@ -366,9 +361,12 @@ public class AddOrderJPanel extends javax.swing.JPanel {
                 }
             }
             if (isNewItem) {
-                menuItems.add(selectedMenuItem);
+                //deep copy
+                MenuItem menuItemNew = new MenuItem(selectedMenuItem.getItemName(),selectedMenuItem.getIngredients(),selectedMenuItem.getServes(),selectedMenuItem.getPrice(),selectedMenuItem.getAdditionalNote());
+                menuItemNew.setQuantity(quantity);
+                menuItems.add(menuItemNew);
             }
-            double price =0;
+            double price = 0;
             DefaultTableModel cartModel = (DefaultTableModel) tblCart.getModel();
             cartModel.setRowCount(0);
             for (MenuItem menuItem : menuItems) {

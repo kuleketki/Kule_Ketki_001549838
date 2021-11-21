@@ -112,7 +112,10 @@ public class AdminWorkAreaJPanel extends javax.swing.JPanel {
     }//GEN-LAST:event_btnManageMenuActionPerformed
 
     private void btnManageOrdersActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnManageOrdersActionPerformed
-        
+        ManageOrderJPanel workArea = new ManageOrderJPanel(displayPanel, adminAccount, ecoSystem, restaurant);
+        displayPanel.add("ManageOrderJPanel", workArea);
+        CardLayout layout = (CardLayout) displayPanel.getLayout();
+        layout.next(displayPanel);
     }//GEN-LAST:event_btnManageOrdersActionPerformed
 
 

@@ -71,14 +71,14 @@ public class MainJFrame extends javax.swing.JFrame {
             }
         });
 
-        userNameJTextField.setText("ketkikule");
+        userNameJTextField.setText("sysadmin");
         userNameJTextField.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 userNameJTextFieldActionPerformed(evt);
             }
         });
 
-        passwordField.setText("ketkikule");
+        passwordField.setText("sysadmin");
         passwordField.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 passwordFieldActionPerformed(evt);

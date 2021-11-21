@@ -142,7 +142,7 @@ public abstract class WorkRequest {
 
     @Override
     public String toString() {
-        return this.receiver.getUsername();
+        return message;
     }
     
     
