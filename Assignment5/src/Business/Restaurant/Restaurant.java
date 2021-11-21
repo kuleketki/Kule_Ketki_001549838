@@ -26,8 +26,8 @@ public class Restaurant {
         this.emailAddress = emailAddress;
         this.managerName = managerName;
         this.address = address;
-        this.menu = new Menu(licenseNumber);
-        this.licenseNumber = licenseNumber;
+        this.menu = new Menu(licenseNo);
+        this.licenseNumber = licenseNo;
         this.telPhoneNo = phone;
     }
 

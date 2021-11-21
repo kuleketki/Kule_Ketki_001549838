@@ -30,9 +30,9 @@ public class SystemAdminWorkAreaJPanel extends javax.swing.JPanel {
     JPanel displayPanel;
     EcoSystem ecosystem;
 
-    public SystemAdminWorkAreaJPanel(JPanel userProcessContainer, EcoSystem ecosystem) {
+    public SystemAdminWorkAreaJPanel(JPanel displayPanel, EcoSystem ecosystem) {
         initComponents();
-        this.displayPanel = userProcessContainer;
+        this.displayPanel = displayPanel;
         this.ecosystem = ecosystem;
         populateTree();
     }
@@ -63,12 +63,12 @@ public class SystemAdminWorkAreaJPanel extends javax.swing.JPanel {
         }
 
         for (int i = 0; i < restaurantList.size(); i++) {
-            restaurantNode = new DefaultMutableTreeNode(restaurantList.get(i).getClass());
+            restaurantNode = new DefaultMutableTreeNode(restaurantList.get(i).getRestaurantName());
             restaurantManagerRoot.insert(restaurantNode, i);
         }
 
         for (int i = 0; i < customerList.size(); i++) {
-            customerNode = new DefaultMutableTreeNode(customerList.get(i).getClass());
+            customerNode = new DefaultMutableTreeNode(customerList.get(i).getFullName());
             customerRoot.insert(customerNode, i);
         }
 
@@ -195,7 +195,10 @@ public class SystemAdminWorkAreaJPanel extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnManageCustomersActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnManageCustomersActionPerformed
-
+        CustomerJPanel workArea = new CustomerJPanel(displayPanel, ecosystem);
+        displayPanel.add("CustomerJPanel", workArea);
+        CardLayout layout = (CardLayout) displayPanel.getLayout();
+        layout.next(displayPanel);
     }//GEN-LAST:event_btnManageCustomersActionPerformed
 
     private void btnManageRestaurantsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnManageRestaurantsActionPerformed

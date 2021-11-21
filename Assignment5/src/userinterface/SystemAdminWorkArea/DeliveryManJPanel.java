@@ -188,7 +188,7 @@ public class DeliveryManJPanel extends javax.swing.JPanel {
         // TODO add your handling code here:
         int selectedRow = tblDeliveryMan.getSelectedRow();
         if (selectedRow < 0) {
-            JOptionPane.showMessageDialog(null, "Please Select a row from table first");
+            JOptionPane.showMessageDialog(null, "Please Select a row from table", "Warning", JOptionPane.WARNING_MESSAGE);
             return;
         }
         DeliveryMan deliveryMan = (DeliveryMan) tblDeliveryMan.getValueAt(selectedRow, 0);
@@ -202,7 +202,7 @@ public class DeliveryManJPanel extends javax.swing.JPanel {
         // TODO add your handling code here:
         int selectedRow = tblDeliveryMan.getSelectedRow();
         if (selectedRow < 0) {
-            JOptionPane.showMessageDialog(null, "Please Select a row from table first", "Warning", JOptionPane.WARNING_MESSAGE);
+            JOptionPane.showMessageDialog(null, "Please Select a row from table", "Warning", JOptionPane.WARNING_MESSAGE);
             return;
         }
 

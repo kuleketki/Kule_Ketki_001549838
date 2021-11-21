@@ -5,10 +5,84 @@
  */
 package Business.Customer;
 
+import java.util.Date;
+
 /**
  *
  * @author harold
  */
 public class Customer {
-    
+
+    private int employeeId;
+    private String fullName;
+    private String email;
+    private long phoneNumber;
+    private String address;
+    private int orderNumber;
+    private Date dob;
+
+    public Customer(int employeeId,String fistName, String email, long phoneNumber, String address, Date dob) {
+        this.employeeId = employeeId;
+        this.fullName = fistName;
+        this.email = email;
+        this.phoneNumber = phoneNumber;
+        this.address = address;
+        this.dob = dob;
+
+    }
+
+    public int getEmployeeId() {
+        return employeeId;
+    }
+
+    public void setEmployeeId(int employeeId) {
+        this.employeeId = employeeId;
+    }
+
+    public String getFullName() {
+        return fullName;
+    }
+
+    public void setFullName(String fullName) {
+        this.fullName = fullName;
+    }
+
+    public Date getDob() {
+        return dob;
+    }
+
+    public void setDob(Date dob) {
+        this.dob = dob;
+    }
+
+    public String getEmailAddress() {
+        return email;
+    }
+
+    public void setEmailAddress(String email) {
+        this.email = email;
+    }
+
+    public long getPhoneNumber() {
+        return phoneNumber;
+    }
+
+    public void setPhoneNumber(long phoneNumber) {
+        this.phoneNumber = phoneNumber;
+    }
+
+    public String getAddress() {
+        return address;
+    }
+
+    public void setAddress(String address) {
+        this.address = address;
+    }
+
+
+    @Override
+    public String toString() {
+        return fullName;
+    }
+
 }

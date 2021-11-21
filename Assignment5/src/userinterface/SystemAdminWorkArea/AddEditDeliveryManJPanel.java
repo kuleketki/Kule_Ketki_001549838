@@ -372,10 +372,16 @@ public class AddEditDeliveryManJPanel extends javax.swing.JPanel {
         }
 
         if (operationId == 0) {
+            for (UserAccount account : ecoSystem.getUserAccountDirectory().getUserAccountList()) {
+                if (account.getUsername().equals(userName)) {
+                    JOptionPane.showMessageDialog(null, "User Name Already Exists", "Invalid Entry", JOptionPane.WARNING_MESSAGE);
+                    return;
+                }
+            }
 
             for (DeliveryMan deliveryMan : deliveryManDirectory.getDeliveryManList()) {
                 if (deliveryMan.getEmailAddress() != null && deliveryMan.getEmailAddress().equals(emailId)) {
-                    JOptionPane.showMessageDialog(null, "Please Enter Valid Email Address ", "Invalid Email ID", JOptionPane.WARNING_MESSAGE);
+                    JOptionPane.showMessageDialog(null, "Email Id Already Exists ", "Invalid Email ID", JOptionPane.WARNING_MESSAGE);
                     return;
                 }
             }
@@ -387,14 +393,7 @@ public class AddEditDeliveryManJPanel extends javax.swing.JPanel {
                 }
             }
 
-            for (UserAccount account : ecoSystem.getUserAccountDirectory().getUserAccountList()) {
-                if (account.getUsername().equals(userName)) {
-                    JOptionPane.showMessageDialog(null, "User Name Already Exists", "Invalid Entry", JOptionPane.WARNING_MESSAGE);
-                    return;
-                }
-            }
-
-            Employee employee = ecoSystem.getEmployeeDirectory().createEmployee(fullName);
+            Employee employee = ecoSystem.getEmployeeDirectory().createEmployee(userName);
             deliveryManDirectory.getDeliveryManList().add(new DeliveryMan(employee.getId(), fullName, address, emailId, Long.parseLong(telNo), workHours, isAvailable));
             UserAccount userAccount = ecoSystem.getUserAccountDirectory().createUserAccount(userName, password, employee, new DeliverManRole());
             JOptionPane.showMessageDialog(null, "New Delivery Man Registered", "Entry Added", JOptionPane.INFORMATION_MESSAGE);
@@ -412,7 +411,7 @@ public class AddEditDeliveryManJPanel extends javax.swing.JPanel {
 
             if (deliveryMan.getEmailAddress().equals(emailId)) {
                 for (DeliveryMan deliveryMan : deliveryManDirectory.getDeliveryManList()) {
-                    if (deliveryMan.getEmailAddress() != null && deliveryMan.getEmailAddress().equals(emailId) && !deliveryMan.getEmailAddress().equals(deliveryMan.getTelephoneNo())) {
+                    if (deliveryMan.getEmailAddress() != null && deliveryMan.getEmailAddress().equals(emailId) && !deliveryMan.getEmailAddress().equals(deliveryMan.getEmailAddress())) {
                         JOptionPane.showMessageDialog(null, "Please Enter Valid Email Address ", "Invalid Email ID", JOptionPane.WARNING_MESSAGE);
                         return;
                     }
