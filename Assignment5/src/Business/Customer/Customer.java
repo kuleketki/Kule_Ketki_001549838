@@ -13,7 +13,7 @@ import java.util.Date;
  */
 public class Customer {
 
-    private int employeeId;
+    private int accountId;
     private String fullName;
     private String email;
     private long phoneNumber;
@@ -22,7 +22,7 @@ public class Customer {
     private Date dob;
 
     public Customer(int employeeId,String fistName, String email, long phoneNumber, String address, Date dob) {
-        this.employeeId = employeeId;
+        this.accountId = employeeId;
         this.fullName = fistName;
         this.email = email;
         this.phoneNumber = phoneNumber;
@@ -31,12 +31,12 @@ public class Customer {
 
     }
 
-    public int getEmployeeId() {
-        return employeeId;
+    public int getAccountId() {
+        return accountId;
     }
 
-    public void setEmployeeId(int employeeId) {
-        this.employeeId = employeeId;
+    public void setAccountId(int accountId) {
+        this.accountId = accountId;
     }
 
     public String getFullName() {

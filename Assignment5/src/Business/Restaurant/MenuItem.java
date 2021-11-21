@@ -15,12 +15,15 @@ public class MenuItem {
     private String ingredients;
     private double price;
     private int serves;
+    private String additionalNote;
+    private int quantity = 1;
 
-    public MenuItem(String itemName, String ingredient, int serves, double price) {
+    public MenuItem(String itemName, String ingredient, int serves, double price, String additionalNote) {
         this.itemName = itemName;
         this.ingredients = ingredient;
         this.price = price;
         this.serves = serves;
+        this.additionalNote = additionalNote;
     }
 
     public String getItemName() {
@@ -53,6 +56,22 @@ public class MenuItem {
 
     public void setServes(int serves) {
         this.serves = serves;
+    }
+
+    public String getAdditionalNote() {
+        return additionalNote;
+    }
+
+    public void setAdditionalNote(String additionalNote) {
+        this.additionalNote = additionalNote;
+    }
+
+    public int getQuantity() {
+        return quantity;
+    }
+
+    public void setQuantity(int quantity) {
+        this.quantity = quantity;
     }
 
     @Override

@@ -49,7 +49,7 @@ public class AddEditCustomerJPanel extends javax.swing.JPanel {
             txtAddress.setText(customer.getAddress());
             JdateBirthdate.setDate(customer.getDob());
             for (UserAccount userAccount : ecoSystem.getUserAccountDirectory().getUserAccountList()) {
-                if (userAccount.getEmployee().getId() == customer.getEmployeeId()) {
+                if (userAccount.getEmployee().getId() == customer.getAccountId()) {
                     txtPassword.setText(userAccount.getPassword());
                     txtUserName.setText(userAccount.getUsername());
                 }

@@ -4,8 +4,13 @@
  */
 package Business.WorkQueue;
 
+import Business.Customer.Customer;
+import Business.DeliveryMan.DeliveryMan;
+import Business.Restaurant.MenuItem;
+import Business.Restaurant.Restaurant;
 import Business.UserAccount.UserAccount;
 import java.util.Date;
+import java.util.ArrayList;
 
 /**
  *
@@ -19,8 +24,15 @@ public abstract class WorkRequest {
     private String status;
     private Date requestDate;
     private Date resolveDate;
-    
-    public WorkRequest(){
+    private DeliveryMan deliveryMan;
+    private Customer customer;
+    private Restaurant restuarant;
+    private String restaurantFeedback;
+    private String customerFeedback;
+    private String deliveryManFeedback;
+    private ArrayList<MenuItem> menuItems;
+
+    public WorkRequest() {
         requestDate = new Date();
     }
 
@@ -71,4 +83,67 @@ public abstract class WorkRequest {
     public void setResolveDate(Date resolveDate) {
         this.resolveDate = resolveDate;
     }
+
+    public DeliveryMan getDeliveryMan() {
+        return deliveryMan;
+    }
+
+    public void setDeliveryMan(DeliveryMan deliveryMan) {
+        this.deliveryMan = deliveryMan;
+    }
+
+    public Customer getCustomer() {
+        return customer;
+    }
+
+    public void setCustomer(Customer customer) {
+        this.customer = customer;
+    }
+
+    public Restaurant getRestuarant() {
+        return restuarant;
+    }
+
+    public void setRestuarant(Restaurant restuarant) {
+        this.restuarant = restuarant;
+    }
+
+    public String getRestaurantFeedback() {
+        return restaurantFeedback;
+    }
+
+    public void setRestaurantFeedback(String restaurantFeedback) {
+        this.restaurantFeedback = restaurantFeedback;
+    }
+
+    public String getCustomerFeedback() {
+        return customerFeedback;
+    }
+
+    public void setCustomerFeedback(String customerFeedback) {
+        this.customerFeedback = customerFeedback;
+    }
+
+    public String getDeliveryManFeedback() {
+        return deliveryManFeedback;
+    }
+
+    public void setDeliveryManFeedback(String deliveryManFeedback) {
+        this.deliveryManFeedback = deliveryManFeedback;
+    }
+
+    public ArrayList<MenuItem> getMenuItems() {
+        return menuItems;
+    }
+
+    public void setMenuItems(ArrayList<MenuItem> menuItems) {
+        this.menuItems = menuItems;
+    }
+
+    @Override
+    public String toString() {
+        return this.receiver.getUsername();
+    }
+    
+    
 }

@@ -27,8 +27,8 @@ public class SystemAdminWorkAreaJPanel extends javax.swing.JPanel {
     /**
      * Creates new form SystemAdminWorkAreaJPanel
      */
-    JPanel displayPanel;
-    EcoSystem ecosystem;
+    private JPanel displayPanel;
+    private EcoSystem ecosystem;
 
     public SystemAdminWorkAreaJPanel(JPanel displayPanel, EcoSystem ecosystem) {
         initComponents();
