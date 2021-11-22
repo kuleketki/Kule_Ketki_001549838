@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package userinterface.SystemAdminWorkArea;
+package Business.Restaurant;
 
 import Business.Customer.Customer;
 import Business.DeliveryMan.DeliveryMan;
@@ -65,6 +65,10 @@ public class OrderDetailsJPanel extends javax.swing.JPanel {
             }
         }
 
+        if (order.getStatus().equals("Delivered")) {
+            btnAccept.setEnabled(false);
+            btnCancel.setEnabled(false);
+        }
         populateTable();
 
     }
@@ -210,7 +214,7 @@ public class OrderDetailsJPanel extends javax.swing.JPanel {
                     .addGroup(layout.createSequentialGroup()
                         .addContainerGap()
                         .addComponent(btnBack, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(121, 121, 121)
+                        .addGap(226, 226, 226)
                         .addComponent(lblTitle, javax.swing.GroupLayout.PREFERRED_SIZE, 229, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -232,9 +236,8 @@ public class OrderDetailsJPanel extends javax.swing.JPanel {
                             .addComponent(txtCustomerAddress, javax.swing.GroupLayout.DEFAULT_SIZE, 176, Short.MAX_VALUE)
                             .addComponent(txtCustFeedback, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(txtCustMsg, javax.swing.GroupLayout.PREFERRED_SIZE, 94, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                .addComponent(txtStatus, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(txtCustName, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 145, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(txtStatus, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(txtCustName, javax.swing.GroupLayout.PREFERRED_SIZE, 145, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(txtOrderTime, javax.swing.GroupLayout.PREFERRED_SIZE, 143, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(comboDeliveryMan, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                     .addGroup(layout.createSequentialGroup()

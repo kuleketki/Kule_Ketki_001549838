@@ -14,7 +14,11 @@ import java.awt.CardLayout;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Arrays;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
+import javax.swing.JTextArea;
+import javax.swing.event.ListSelectionEvent;
+import javax.swing.event.ListSelectionListener;
 import javax.swing.table.DefaultTableModel;
 
 /**
@@ -22,7 +26,7 @@ import javax.swing.table.DefaultTableModel;
  * @author raunak
  */
 public class CustomerAreaJPanel extends javax.swing.JPanel {
-
+    
     private JPanel displayPanel;
     private UserAccount userAccount;
     private EcoSystem ecoSystem;
@@ -37,7 +41,7 @@ public class CustomerAreaJPanel extends javax.swing.JPanel {
         this.userAccount = account;
         this.ecoSystem = business;
         for (Customer customer : business.getCustomerDirectory().getCustomerList()) {
-
+            
             if (account.getEmployee().getId() == customer.getAccountId()) {
                 this.customer = customer;
                 valueLabel.setText(customer.getFullName());
@@ -46,10 +50,10 @@ public class CustomerAreaJPanel extends javax.swing.JPanel {
         }
         populateRequestTable();
     }
-
+    
     public void populateRequestTable() {
         SimpleDateFormat formatter = new SimpleDateFormat("dd-MM-yyyy hh:mm");
-
+        
         DefaultTableModel model = (DefaultTableModel) workRequestJTable.getModel();
         model.setRowCount(0);
         ArrayList<String> orderItems = new ArrayList<>();
@@ -64,16 +68,32 @@ public class CustomerAreaJPanel extends javax.swing.JPanel {
             row[2] = Arrays.toString(orderItems.toArray());
             row[3] = wr.getRestuarant().getRestaurantName();
             row[4] = wr.getStatus();
-            if(wr.getDeliveryMan()!=null){
-            row[5] = wr.getDeliveryMan().getName();
-            }else{
-            row[5] = "Not Assigned";    
+            if (wr.getDeliveryMan() != null) {
+                row[5] = wr.getDeliveryMan().getName();
+            } else {
+                row[5] = "Not Assigned";                
             }
             row[6] = wr.getDeliveryManFeedback();
             row[7] = wr.getRestaurantFeedback();
-        
+            
             model.addRow(row);
         }
+        
+        workRequestJTable.getSelectionModel().addListSelectionListener(new ListSelectionListener() {
+            public void valueChanged(ListSelectionEvent event) {
+                takeFeedback();
+            }
+        });
+    }
+    
+    private void takeFeedback() {
+        final JTextArea textArea = new JTextArea();
+        String[] options = {"OK", "Cancel"};
+        
+        String selection = JOptionPane.showInputDialog(textArea, "Enter Feddback", "Order Feedback", JOptionPane.QUESTION_MESSAGE);
+        WorkRequest workRequest = (WorkRequest) workRequestJTable.getValueAt(workRequestJTable.getSelectedRow(), 0);
+        workRequest.setCustomerFeedback(selection);
+        
     }
 
     /**
@@ -188,19 +208,19 @@ public class CustomerAreaJPanel extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void requestTestJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_requestTestJButtonActionPerformed
-
+        
 
     }//GEN-LAST:event_requestTestJButtonActionPerformed
 
     private void refreshTestJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_refreshTestJButtonActionPerformed
-
+        
         populateRequestTable();
 
     }//GEN-LAST:event_refreshTestJButtonActionPerformed
 
     private void btnAddActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAddActionPerformed
         // TODO add your handling code here:
-        AddOrderJPanel workArea = new AddOrderJPanel(displayPanel,ecoSystem,userAccount,customer);
+        AddOrderJPanel workArea = new AddOrderJPanel(displayPanel, ecoSystem, userAccount, customer);
         displayPanel.add("AddOrderJPanel", workArea);
         CardLayout layout = (CardLayout) displayPanel.getLayout();
         layout.next(displayPanel);

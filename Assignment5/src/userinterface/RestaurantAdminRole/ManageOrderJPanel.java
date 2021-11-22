@@ -19,7 +19,7 @@ import java.util.Arrays;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.table.DefaultTableModel;
-import userinterface.SystemAdminWorkArea.OrderDetailsJPanel;
+import Business.Restaurant.OrderDetailsJPanel;
 
 /**
  *

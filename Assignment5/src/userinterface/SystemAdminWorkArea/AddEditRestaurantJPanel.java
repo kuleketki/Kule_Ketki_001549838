@@ -376,7 +376,7 @@ public class AddEditRestaurantJPanel extends javax.swing.JPanel {
             restaurant.setAddress(address);
             restaurant.setPhoneNumber(Long.parseLong(phoneNumber));
 
-            JOptionPane.showMessageDialog(null, "Delivery Man Details Updated", "Entry Updated", JOptionPane.INFORMATION_MESSAGE);
+            JOptionPane.showMessageDialog(null, "Restaurant Details Updated", "Entry Updated", JOptionPane.INFORMATION_MESSAGE);
         }
 
     }//GEN-LAST:event_btnSaveActionPerformed

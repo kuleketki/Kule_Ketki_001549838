@@ -142,7 +142,7 @@ public class MainJFrame extends javax.swing.JFrame {
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addGap(94, 94, 94)
                                 .addComponent(logoutJButton, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)))))
-                .addContainerGap(481, Short.MAX_VALUE))
+                .addContainerGap(422, Short.MAX_VALUE))
         );
 
         jSplitPane1.setLeftComponent(jPanel1);
@@ -163,7 +163,7 @@ public class MainJFrame extends javax.swing.JFrame {
                 .addGap(39, 39, 39))
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, 1349, Short.MAX_VALUE)
+                .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, 1115, Short.MAX_VALUE)
                 .addContainerGap())
         );
         jPanel2Layout.setVerticalGroup(
@@ -173,7 +173,7 @@ public class MainJFrame extends javax.swing.JFrame {
                 .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 797, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(70, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         container.add(jPanel2, "card2");
@@ -220,6 +220,11 @@ public class MainJFrame extends javax.swing.JFrame {
         CardLayout crdLyt = (CardLayout) container.getLayout();
         crdLyt.next(container);
         dB4OUtil.storeSystem(system);
+        ImageIcon ii = new ImageIcon(getClass().getResource("/res/icon_5.jpg"));
+        Image image = ii.getImage().getScaledInstance(jPanel2.getWidth(), jPanel2.getHeight(), Image.SCALE_SMOOTH);
+        jLabel4.setIcon(new ImageIcon(image));
+        blankJP.add(jLabel3);
+        blankJP.add(jLabel4);
     }//GEN-LAST:event_logoutJButtonActionPerformed
 
     private void passwordFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_passwordFieldActionPerformed

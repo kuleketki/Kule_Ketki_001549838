@@ -10,6 +10,7 @@ import Business.DeliveryMan.DeliveryMan;
 import Business.EcoSystem;
 import Business.Restaurant.Menu;
 import Business.UserAccount.UserAccount;
+import Business.WorkQueue.Order;
 import Business.WorkQueue.WorkRequest;
 import java.awt.CardLayout;
 import java.awt.Component;
@@ -17,6 +18,8 @@ import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
+import javax.swing.event.ListSelectionEvent;
+import javax.swing.event.ListSelectionListener;
 import javax.swing.table.DefaultTableModel;
 
 /**
@@ -61,31 +64,41 @@ public class CustomerJPanel extends javax.swing.JPanel {
 
             custModel.addRow(row);
         }
+
+        tblCustomer.getSelectionModel().addListSelectionListener(new ListSelectionListener() {
+            public void valueChanged(ListSelectionEvent event) {
+                loadCustOrderList();
+            }
+        });
     }
 
     public void loadCustOrderList() {
-        DefaultTableModel ordModel = (DefaultTableModel) tblCustOrd.getModel();
-        ordModel.setRowCount(0);
-        /*for(WorkRequest wr :  ecoSystem.getWorkQueue().getWorkRequestList())
-        {
-            int Quantity = 0;
-            double totalPrice = 0.0;
-            OrderRequestQueue ord = (OrderRequestQueue)wr;
-            if(ord.getCustomer().getFullName()!= null && ord.getCustomer().getFullName().equals(txtFirstName.getText()))
-            {
-                Object [] row = new Object[6];
-                row[0] = ord.getRestuarant().getRestName();
-                row[1] = ord;
-                for(Menu menu : ord.getOrderRequest())
-                {
-                   Quantity += menu.getQuantity();
-                   totalPrice += menu.getQuantity() * menu.getPrice();
+        try {
+            Customer customer = (Customer) tblCustomer.getValueAt(tblCustomer.getSelectedRow(), 0);
+            UserAccount userAccount = null;
+            for (UserAccount ua : ecoSystem.getUserAccountDirectory().getUserAccountList()) {
+                if (ua.getEmployee().getId() == customer.getAccountId()) {
+                    userAccount = ua;
                 }
-                row[2] = Quantity;
-                row[3] = totalPrice;
-                ordModel.addRow(row);
             }
-        }*/
+            if (userAccount != null) {
+                DefaultTableModel model = (DefaultTableModel) tblCustOrd.getModel();
+                model.setRowCount(0);
+                for (WorkRequest wr : userAccount.getWorkQueue().getWorkRequestList()) {
+
+                    Order order = (Order) wr;
+
+                    Object[] row = new Object[3];
+                    row[0] = order.getRestuarant().getRestaurantName();
+                    row[1] = order.getStatus();
+                    row[2] = order.getCustomerFeedback();
+                    model.addRow(row);
+
+                }
+            }
+        } catch (Exception e) {
+            return;
+        }
     }
 
     /**
@@ -160,17 +173,17 @@ public class CustomerJPanel extends javax.swing.JPanel {
 
         tblCustOrd.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null}
             },
             new String [] {
-                "Restaurant Name", "Order Name", "Quantity", "Total Price"
+                "Restaurant Name", "Status", "Customer Feedback"
             }
         ) {
             boolean[] canEdit = new boolean [] {
-                false, false, false, false
+                false, false, false
             };
 
             public boolean isCellEditable(int rowIndex, int columnIndex) {
