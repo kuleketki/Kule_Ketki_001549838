@@ -82,6 +82,7 @@ public class AddOrderJPanel extends javax.swing.JPanel {
         btnAdd = new javax.swing.JButton();
         lblTitle = new javax.swing.JLabel();
 
+        setBackground(new java.awt.Color(234, 226, 214));
         addContainerListener(new java.awt.event.ContainerAdapter() {
             public void componentRemoved(java.awt.event.ContainerEvent evt) {
                 formComponentRemoved(evt);

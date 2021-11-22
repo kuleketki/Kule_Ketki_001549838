@@ -101,6 +101,8 @@ public class SystemAdminWorkAreaJPanel extends javax.swing.JPanel {
 
         setLayout(new java.awt.BorderLayout());
 
+        jPanel1.setBackground(new java.awt.Color(234, 226, 214));
+
         jTree.addTreeSelectionListener(new javax.swing.event.TreeSelectionListener() {
             public void valueChanged(javax.swing.event.TreeSelectionEvent evt) {
                 jTreeValueChanged(evt);
@@ -125,12 +127,15 @@ public class SystemAdminWorkAreaJPanel extends javax.swing.JPanel {
 
         jSplitPane.setLeftComponent(jPanel1);
 
+        jPanel2.setBackground(new java.awt.Color(234, 226, 214));
+
         jLabel1.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
         jLabel1.setText("Selected Node:");
 
         lblSelectedNode.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
         lblSelectedNode.setText("<View_selected_node>");
 
+        btnManageCustomers.setBackground(new java.awt.Color(134, 118, 102));
         btnManageCustomers.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
         btnManageCustomers.setText("Manage All Customers");
         btnManageCustomers.addActionListener(new java.awt.event.ActionListener() {
@@ -139,6 +144,7 @@ public class SystemAdminWorkAreaJPanel extends javax.swing.JPanel {
             }
         });
 
+        btnManageRestaurants.setBackground(new java.awt.Color(134, 118, 102));
         btnManageRestaurants.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
         btnManageRestaurants.setText("Manage Restaurants");
         btnManageRestaurants.addActionListener(new java.awt.event.ActionListener() {
@@ -147,6 +153,7 @@ public class SystemAdminWorkAreaJPanel extends javax.swing.JPanel {
             }
         });
 
+        btnManageDeliveryMan.setBackground(new java.awt.Color(134, 118, 102));
         btnManageDeliveryMan.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
         btnManageDeliveryMan.setText("Manage Deliveryman");
         btnManageDeliveryMan.addActionListener(new java.awt.event.ActionListener() {

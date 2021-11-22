@@ -68,6 +68,8 @@ public class AddEditMenuItemJPanel extends javax.swing.JPanel {
         lblAdditionalNote = new javax.swing.JLabel();
         txtAdditionalNote = new javax.swing.JTextField();
 
+        setBackground(new java.awt.Color(234, 226, 214));
+
         lblTitle.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         lblTitle.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblTitle.setText("Menu Item");
@@ -117,7 +119,6 @@ public class AddEditMenuItemJPanel extends javax.swing.JPanel {
                         .addGap(292, 292, 292)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(btnSave, javax.swing.GroupLayout.PREFERRED_SIZE, 92, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(234, 234, 234))
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -176,37 +177,40 @@ public class AddEditMenuItemJPanel extends javax.swing.JPanel {
 
     private void btnSaveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSaveActionPerformed
         // TODO add your handling code here:
-
-        if (txtMenuItem.getText().isEmpty() || txtIngrediants.getText().isEmpty() || txtPrice.getText().isEmpty() || txtServingSize.getText().isEmpty()) {
-            JOptionPane.showMessageDialog(null, "Please Fill All Fields ", "Empty Fields", JOptionPane.WARNING_MESSAGE);
-            return;
-        }
-
-        String itemName = txtMenuItem.getText();
-        String ingrediant = txtIngrediants.getText();
-        int servingSize = Integer.parseInt(txtServingSize.getText());
-        String additionalNote = txtAdditionalNote.getText();
-        double price;
         try {
-            price = Double.parseDouble(txtPrice.getText());
-        } catch (NumberFormatException e) {
-            JOptionPane.showMessageDialog(null, "Please Enter Valid Price Value ", "Invalid Value", JOptionPane.WARNING_MESSAGE);
-            return;
+            if (txtMenuItem.getText().isEmpty() || txtIngrediants.getText().isEmpty() || txtPrice.getText().isEmpty() || txtServingSize.getText().isEmpty()) {
+                JOptionPane.showMessageDialog(null, "Please Fill All Fields ", "Empty Fields", JOptionPane.WARNING_MESSAGE);
+                return;
+            }
+
+            String itemName = txtMenuItem.getText();
+            String ingrediant = txtIngrediants.getText();
+            int servingSize = Integer.parseInt(txtServingSize.getText());
+            String additionalNote = txtAdditionalNote.getText();
+            double price;
+            try {
+                price = Double.parseDouble(txtPrice.getText());
+            } catch (NumberFormatException e) {
+                JOptionPane.showMessageDialog(null, "Please Enter Valid Price Value ", "Invalid Value", JOptionPane.WARNING_MESSAGE);
+                return;
+            }
+
+            if (operationId == 0) {
+                menu.getMenuList().add(new MenuItem(itemName, ingrediant, servingSize, price, additionalNote));
+                JOptionPane.showMessageDialog(null, "Menu Item Added", "Entry Added", JOptionPane.INFORMATION_MESSAGE);
+            } else {
+                menuItem.setItemName(itemName);
+                menuItem.setIngredients(ingrediant);
+                menuItem.setAdditionalNote(additionalNote);
+                menuItem.setPrice(price);
+                menuItem.setServes(servingSize);
+                JOptionPane.showMessageDialog(null, "Menu Item Updated", "Entry Updated", JOptionPane.INFORMATION_MESSAGE);
+
+            }
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, "Please Enter Valid Values ", "Invalid Value", JOptionPane.WARNING_MESSAGE);
+                return;
         }
-
-        if (operationId == 0) {
-            menu.getMenuList().add(new MenuItem(itemName, ingrediant, servingSize, price, additionalNote));
-            JOptionPane.showMessageDialog(null, "Menu Item Added", "Entry Added", JOptionPane.INFORMATION_MESSAGE);
-        } else {
-            menuItem.setItemName(itemName);
-            menuItem.setIngredients(ingrediant);
-            menuItem.setAdditionalNote(additionalNote);
-            menuItem.setPrice(price);
-            menuItem.setServes(servingSize);
-            JOptionPane.showMessageDialog(null, "Menu Item Updated", "Entry Updated", JOptionPane.INFORMATION_MESSAGE);
-
-        }
-
     }//GEN-LAST:event_btnSaveActionPerformed
 
     private void btnBackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBackActionPerformed

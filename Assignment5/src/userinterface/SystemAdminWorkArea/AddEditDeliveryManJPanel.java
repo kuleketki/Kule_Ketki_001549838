@@ -102,43 +102,45 @@ public class AddEditDeliveryManJPanel extends javax.swing.JPanel {
         lblCompulsoryFullName = new javax.swing.JLabel();
         lblCompulsoryPassword = new javax.swing.JLabel();
 
-        lblTitle.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
+        setBackground(new java.awt.Color(234, 226, 214));
+
+        lblTitle.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         lblTitle.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblTitle.setText("Add Delivey Man");
 
-        lblName.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
+        lblName.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         lblName.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblName.setText("User Name :");
 
-        txtUserName.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
+        txtUserName.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
 
-        txtPassword.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
+        txtPassword.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
 
-        lblPassword.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
+        lblPassword.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         lblPassword.setText("Password :");
 
-        lblFullName.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
+        lblFullName.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         lblFullName.setText("Full Name :");
 
-        txtFullName.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
+        txtFullName.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
 
-        lblTelNo.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
+        lblTelNo.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         lblTelNo.setText("Mobile Number :");
 
-        txtTelNo.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
+        txtTelNo.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
 
-        lblWorkHours.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
+        lblWorkHours.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         lblWorkHours.setText("Work Hours :");
 
-        txtWorkHour.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
+        txtWorkHour.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
 
-        lblAvailable.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
+        lblAvailable.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         lblAvailable.setText("Availability :");
 
-        lblAddress.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
+        lblAddress.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         lblAddress.setText("Address :");
 
-        btnSaveDeli.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
+        btnSaveDeli.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         btnSaveDeli.setText("Save");
         btnSaveDeli.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -146,7 +148,7 @@ public class AddEditDeliveryManJPanel extends javax.swing.JPanel {
             }
         });
 
-        btnBack.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
+        btnBack.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         btnBack.setText("<< Back");
         btnBack.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -154,44 +156,44 @@ public class AddEditDeliveryManJPanel extends javax.swing.JPanel {
             }
         });
 
-        txtAddress.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
+        txtAddress.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
 
-        lblEmail.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
+        lblEmail.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         lblEmail.setText("Email :");
 
-        txtEmail.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
+        txtEmail.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
 
-        chkbAvail.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
+        chkbAvail.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
 
-        lblCompulsory.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
+        lblCompulsory.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         lblCompulsory.setForeground(new java.awt.Color(255, 51, 51));
         lblCompulsory.setText("*");
 
-        lblCompulsory1.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
+        lblCompulsory1.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         lblCompulsory1.setForeground(new java.awt.Color(255, 51, 51));
         lblCompulsory1.setText("*");
 
-        lblCompulsoryAdd.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
+        lblCompulsoryAdd.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         lblCompulsoryAdd.setForeground(new java.awt.Color(255, 51, 51));
         lblCompulsoryAdd.setText("*");
 
-        lblCompulsoryWrkHrs.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
+        lblCompulsoryWrkHrs.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         lblCompulsoryWrkHrs.setForeground(new java.awt.Color(255, 51, 51));
         lblCompulsoryWrkHrs.setText("*");
 
-        lblCompulsoryEmail.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
+        lblCompulsoryEmail.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         lblCompulsoryEmail.setForeground(new java.awt.Color(255, 51, 51));
         lblCompulsoryEmail.setText("*");
 
-        lblCompulsoryTelPh.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
+        lblCompulsoryTelPh.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         lblCompulsoryTelPh.setForeground(new java.awt.Color(255, 51, 51));
         lblCompulsoryTelPh.setText("*");
 
-        lblCompulsoryFullName.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
+        lblCompulsoryFullName.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         lblCompulsoryFullName.setForeground(new java.awt.Color(255, 51, 51));
         lblCompulsoryFullName.setText("*");
 
-        lblCompulsoryPassword.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
+        lblCompulsoryPassword.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         lblCompulsoryPassword.setForeground(new java.awt.Color(255, 51, 51));
         lblCompulsoryPassword.setText("*");
 
@@ -335,7 +337,7 @@ public class AddEditDeliveryManJPanel extends javax.swing.JPanel {
                         .addComponent(lblCompulsoryAdd)))
                 .addGap(81, 81, 81)
                 .addComponent(btnSaveDeli, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(263, Short.MAX_VALUE))
+                .addContainerGap(268, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 

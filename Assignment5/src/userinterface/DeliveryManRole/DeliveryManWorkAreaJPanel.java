@@ -84,6 +84,7 @@ public class DeliveryManWorkAreaJPanel extends javax.swing.JPanel {
         btnDelivered = new javax.swing.JButton();
         btnPreviousOrders = new javax.swing.JButton();
 
+        setBackground(new java.awt.Color(234, 226, 214));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N

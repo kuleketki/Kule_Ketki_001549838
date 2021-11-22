@@ -1,6 +1,11 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 
 <Form version="1.3" maxVersion="1.9" type="org.netbeans.modules.form.forminfo.JPanelFormInfo">
+  <Properties>
+    <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+      <Color blue="d6" green="e2" red="ea" type="rgb"/>
+    </Property>
+  </Properties>
   <AuxValues>
     <AuxValue name="FormSettings_autoResourcing" type="java.lang.Integer" value="0"/>
     <AuxValue name="FormSettings_autoSetComponentName" type="java.lang.Boolean" value="false"/>
@@ -34,42 +39,39 @@
                       <Component id="btnSave" min="-2" pref="117" max="-2" attributes="0"/>
                       <EmptySpace min="-2" pref="129" max="-2" attributes="0"/>
                   </Group>
-                  <Group type="103" alignment="0" groupAlignment="1" attributes="0">
-                      <Group type="102" alignment="1" attributes="0">
-                          <EmptySpace min="92" pref="92" max="-2" attributes="0"/>
-                          <Component id="lblTitle" min="-2" pref="211" max="-2" attributes="0"/>
-                          <EmptySpace min="-2" pref="123" max="-2" attributes="0"/>
-                      </Group>
-                      <Group type="102" alignment="1" attributes="0">
-                          <EmptySpace pref="35" max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="1" attributes="0">
-                              <Group type="102" alignment="1" attributes="0">
-                                  <Group type="103" groupAlignment="0" attributes="0">
-                                      <Component id="lblPassword" alignment="1" min="-2" max="-2" attributes="0"/>
-                                      <Component id="lblFullName" alignment="1" min="-2" pref="72" max="-2" attributes="0"/>
-                                      <Component id="lbluserName" alignment="1" min="-2" max="-2" attributes="0"/>
-                                  </Group>
-                                  <EmptySpace type="separate" max="-2" attributes="0"/>
-                                  <Group type="103" groupAlignment="0" attributes="0">
-                                      <Component id="txtPassword" alignment="0" min="-2" pref="279" max="-2" attributes="0"/>
-                                      <Component id="txtUserName" min="-2" pref="279" max="-2" attributes="0"/>
-                                      <Component id="txtFullName" alignment="0" min="-2" pref="279" max="-2" attributes="0"/>
-                                      <Component id="JdateBirthdate" alignment="0" min="-2" pref="279" max="-2" attributes="0"/>
-                                      <Component id="txtTelNo" alignment="0" min="-2" pref="279" max="-2" attributes="0"/>
-                                      <Component id="txtEmail" alignment="0" min="-2" pref="279" max="-2" attributes="0"/>
-                                      <Component id="txtAddress" alignment="0" min="-2" pref="279" max="-2" attributes="0"/>
-                                  </Group>
-                                  <EmptySpace min="-2" max="-2" attributes="0"/>
-                                  <Group type="103" groupAlignment="0" attributes="0">
-                                      <Component id="jLabel10" min="-2" pref="17" max="-2" attributes="0"/>
-                                      <Component id="jLabel4" min="-2" pref="17" max="-2" attributes="0"/>
-                                      <Component id="jLabel3" min="-2" max="-2" attributes="0"/>
-                                  </Group>
-                              </Group>
-                              <Component id="jLabel16" alignment="1" min="-2" pref="17" max="-2" attributes="0"/>
-                              <Component id="jLabel15" alignment="1" min="-2" pref="17" max="-2" attributes="0"/>
-                              <Component id="jLabel14" alignment="1" min="-2" pref="17" max="-2" attributes="0"/>
+                  <Group type="102" alignment="0" attributes="0">
+                      <EmptySpace min="-2" pref="36" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="1" attributes="0">
+                          <Group type="102" alignment="1" attributes="0">
+                              <Component id="lblTitle" min="-2" pref="211" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="123" max="-2" attributes="0"/>
                           </Group>
+                          <Group type="102" alignment="1" attributes="0">
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Component id="lblPassword" alignment="1" min="-2" max="-2" attributes="0"/>
+                                  <Component id="lblFullName" alignment="1" min="-2" pref="72" max="-2" attributes="0"/>
+                                  <Component id="lbluserName" alignment="1" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <EmptySpace type="separate" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Component id="txtPassword" alignment="0" min="-2" pref="279" max="-2" attributes="0"/>
+                                  <Component id="txtUserName" min="-2" pref="279" max="-2" attributes="0"/>
+                                  <Component id="txtFullName" alignment="0" min="-2" pref="279" max="-2" attributes="0"/>
+                                  <Component id="JdateBirthdate" alignment="0" min="-2" pref="279" max="-2" attributes="0"/>
+                                  <Component id="txtTelNo" alignment="0" min="-2" pref="279" max="-2" attributes="0"/>
+                                  <Component id="txtEmail" alignment="0" min="-2" pref="279" max="-2" attributes="0"/>
+                                  <Component id="txtAddress" alignment="0" min="-2" pref="279" max="-2" attributes="0"/>
+                              </Group>
+                              <EmptySpace min="-2" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Component id="jLabel10" min="-2" pref="17" max="-2" attributes="0"/>
+                                  <Component id="jLabel4" min="-2" pref="17" max="-2" attributes="0"/>
+                                  <Component id="jLabel3" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                          </Group>
+                          <Component id="jLabel16" alignment="1" min="-2" pref="17" max="-2" attributes="0"/>
+                          <Component id="jLabel15" alignment="1" min="-2" pref="17" max="-2" attributes="0"/>
+                          <Component id="jLabel14" alignment="1" min="-2" pref="17" max="-2" attributes="0"/>
                       </Group>
                   </Group>
               </Group>
@@ -181,11 +183,6 @@
       </Properties>
     </Component>
     <Component class="javax.swing.JTextField" name="txtUserName">
-      <Properties>
-        <Property name="document" type="javax.swing.text.Document" editor="org.netbeans.modules.form.ComponentChooserEditor">
-          <ComponentRef name="default"/>
-        </Property>
-      </Properties>
     </Component>
     <Component class="javax.swing.JButton" name="btnSave">
       <Properties>
@@ -204,35 +201,15 @@
       </Events>
     </Component>
     <Component class="javax.swing.JTextField" name="txtPassword">
-      <Properties>
-        <Property name="document" type="javax.swing.text.Document" editor="org.netbeans.modules.form.ComponentChooserEditor">
-          <ComponentRef name="default"/>
-        </Property>
-      </Properties>
     </Component>
     <Component class="javax.swing.JTextField" name="txtFullName">
-      <Properties>
-        <Property name="document" type="javax.swing.text.Document" editor="org.netbeans.modules.form.ComponentChooserEditor">
-          <ComponentRef name="default"/>
-        </Property>
-      </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtFullNameActionPerformed"/>
       </Events>
     </Component>
     <Component class="javax.swing.JTextField" name="txtEmail">
-      <Properties>
-        <Property name="document" type="javax.swing.text.Document" editor="org.netbeans.modules.form.ComponentChooserEditor">
-          <ComponentRef name="default"/>
-        </Property>
-      </Properties>
     </Component>
     <Component class="javax.swing.JTextField" name="txtTelNo">
-      <Properties>
-        <Property name="document" type="javax.swing.text.Document" editor="org.netbeans.modules.form.ComponentChooserEditor">
-          <ComponentRef name="default"/>
-        </Property>
-      </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="lblDob">
       <Properties>
@@ -242,11 +219,6 @@
     <Component class="com.toedter.calendar.JDateChooser" name="JdateBirthdate">
     </Component>
     <Component class="javax.swing.JTextField" name="txtAddress">
-      <Properties>
-        <Property name="document" type="javax.swing.text.Document" editor="org.netbeans.modules.form.ComponentChooserEditor">
-          <ComponentRef name="default"/>
-        </Property>
-      </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel3">
       <Properties>

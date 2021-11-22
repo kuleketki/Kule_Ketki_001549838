@@ -89,6 +89,8 @@ public class ManageOrderJPanel extends javax.swing.JPanel {
         btnBack = new javax.swing.JButton();
         btnOrderDetails = new javax.swing.JButton();
 
+        setBackground(new java.awt.Color(234, 226, 214));
+
         tblOrderHistory.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null, null, null},

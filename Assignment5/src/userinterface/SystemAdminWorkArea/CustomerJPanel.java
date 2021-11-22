@@ -123,6 +123,8 @@ public class CustomerJPanel extends javax.swing.JPanel {
         lblCustName = new javax.swing.JLabel();
         txtCustName = new javax.swing.JLabel();
 
+        setBackground(new java.awt.Color(234, 226, 214));
+
         lblTitle.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
         lblTitle.setText("Order List");
 

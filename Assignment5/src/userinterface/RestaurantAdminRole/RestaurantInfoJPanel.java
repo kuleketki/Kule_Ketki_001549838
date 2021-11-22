@@ -63,6 +63,8 @@ public class RestaurantInfoJPanel extends javax.swing.JPanel {
         lblTelPh = new javax.swing.JLabel();
         txtTelPh = new javax.swing.JTextField();
 
+        setBackground(new java.awt.Color(234, 226, 214));
+
         lblRestaurantName.setText("Restaurant Name :");
 
         lblManagerName.setText("Manager Name :");

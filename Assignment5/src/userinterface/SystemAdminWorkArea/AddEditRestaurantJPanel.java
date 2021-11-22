@@ -95,6 +95,8 @@ public class AddEditRestaurantJPanel extends javax.swing.JPanel {
         txtEmailId = new javax.swing.JTextField();
         lblMandatoryEmailID = new javax.swing.JLabel();
 
+        setBackground(new java.awt.Color(234, 226, 214));
+
         lbltitle.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         lbltitle.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lbltitle.setText("Add Restuarant");

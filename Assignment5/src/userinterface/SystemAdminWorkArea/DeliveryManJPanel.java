@@ -67,7 +67,9 @@ public class DeliveryManJPanel extends javax.swing.JPanel {
         btnModify = new javax.swing.JButton();
         btnDelete = new javax.swing.JButton();
 
-        btnBack.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
+        setBackground(new java.awt.Color(234, 226, 214));
+
+        btnBack.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         btnBack.setText("<< Back");
         btnBack.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -75,7 +77,7 @@ public class DeliveryManJPanel extends javax.swing.JPanel {
             }
         });
 
-        lblTitle.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
+        lblTitle.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         lblTitle.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblTitle.setText("Delivery Man List ");
 
@@ -101,7 +103,7 @@ public class DeliveryManJPanel extends javax.swing.JPanel {
         });
         jScrollPane1.setViewportView(tblDeliveryMan);
 
-        btnAdd.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
+        btnAdd.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         btnAdd.setText("Add");
         btnAdd.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -109,7 +111,7 @@ public class DeliveryManJPanel extends javax.swing.JPanel {
             }
         });
 
-        btnModify.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
+        btnModify.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         btnModify.setText("Update");
         btnModify.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -117,7 +119,7 @@ public class DeliveryManJPanel extends javax.swing.JPanel {
             }
         });
 
-        btnDelete.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
+        btnDelete.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         btnDelete.setText("Delete");
         btnDelete.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {

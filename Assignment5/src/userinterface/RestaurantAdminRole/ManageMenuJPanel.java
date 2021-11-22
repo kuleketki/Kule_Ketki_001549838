@@ -50,6 +50,8 @@ public class ManageMenuJPanel extends javax.swing.JPanel {
         btnUpdateMenu = new javax.swing.JButton();
         btnDeleteItem = new javax.swing.JButton();
 
+        setBackground(new java.awt.Color(234, 226, 214));
+
         jButton1.setText("<<Back");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
